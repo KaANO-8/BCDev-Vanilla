@@ -6,8 +6,8 @@ const solc = require('solc');
 const buildPath = path.resolve(__dirname,'build');
 //remove the previous bcompiled contracts
 fs.removeSync(buildPath);
-const campaignPath = path.resolve(__dirname,'contracts','NGOList.sol');
-const source = fs.readFileSync(campaignPath,'utf8');
+const meraNGOPath = path.resolve(__dirname,'contracts','meraNGO.sol');
+const source = fs.readFileSync(meraNGOPath,'utf8');
 const output = solc.compile(source,1).contracts;
 //create the build path to store compiled contracts
 fs.ensureDirSync(buildPath);

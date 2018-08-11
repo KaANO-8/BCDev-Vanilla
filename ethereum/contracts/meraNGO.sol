@@ -1,5 +1,18 @@
 pragma solidity ^0.4.17;
 
+contract NGOs {
+
+    address[] public onboardedNGOs;
+    //to create a new Campaign by providing address and minimimum contribution
+    function onboardNGO (int minimum) public{
+        address newNGO = new NGO(minimum, msg.sender);
+        onboardedNGOs.push(newNGO);
+    } 
+    function getOnBoardedNGOs () public view returns(address[]) {
+        return onboardedNGOs;
+    }     
+}
+
 //single NGO
 contract NGO {
     
@@ -41,7 +54,7 @@ contract NGO {
         require(int(msg.value) > minContribution, "Your contribution has to be greater than minContribution");
         contributers[msg.sender] = int(msg.value);
         contributerCount++;
-        totalAmountContributed+=int(msg.value);
+        totalAmountContributed += int(msg.value);
     }
     //these arguments are all memory type(temparary in memory)
     function createDonationRequest(string des,int val,address rec) public restricted { 
