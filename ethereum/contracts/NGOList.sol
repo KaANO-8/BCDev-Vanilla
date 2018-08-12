@@ -1,7 +1,7 @@
 pragma solidity ^0.4.17;
 
 //List of NGOs
-import "meraNGO.sol";
+/* import "meraNGO.sol";
 
 contract NGOs {
 
@@ -14,4 +14,4 @@ contract NGOs {
     function getOnBoardedNGOs () public view returns(address[]) {
         return onboardedNGOs;
     }     
-}
+} */

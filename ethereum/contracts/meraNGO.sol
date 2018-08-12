@@ -33,6 +33,11 @@ contract NGO {
     int public contributerCount = 0;
     int public totalAmountContributed = 0;
     int public reliabilityFactor = 10;
+    event RequestSatus(
+       string _description,
+       int _amount,
+       address _recieptAddress
+    );
     
     //define a function modifier to be used by any function
     modifier restricted(){
@@ -74,6 +79,7 @@ contract NGO {
             rejectionStake:0
             });
         donationRequests.push(donationRequest);
+        RequestSatus(des, val, rec);
     }
     
     function rejectExpendRequest(int index) public {
