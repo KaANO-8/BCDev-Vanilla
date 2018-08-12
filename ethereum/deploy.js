@@ -8,7 +8,7 @@ const provider = new HDWalletprovider(
     //mnemonic for accounts on metamask
     'tuition dog half myth slam foster change pear charge hour addict lizard',
     //network location
-    'https://rinkeby.infura.io/v3/f9cdef76f9cc4a568ba708ce504ee3dd'
+    'https://kovan.infura.io/v3/0a0f4b74c69a48fe97aec1f56cabc348'
     );
 
 const web3 = new Web3(provider);
@@ -18,7 +18,7 @@ const deploy = async () => {
     console.log('Account',accounts[0]);
     const factory = await new web3.eth.Contract(JSON.parse(compiledFactory.interface))
         .deploy({data:'0x' + compiledFactory.bytecode})
-        .send({from:accounts[0],gas:'1000000'});
+        .send({from:accounts[0],gas:'2000000'});
     console.log('Address',factory.options.address);
 
 }
