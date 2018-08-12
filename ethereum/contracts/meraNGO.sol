@@ -33,7 +33,7 @@ contract NGO {
     int public contributerCount = 0;
     int public totalAmountContributed = 0;
     int public reliabilityFactor = 10;
-    event RequestSatus(
+    event RequestStatus(
        string _description,
        int _amount,
        address _recieptAddress
@@ -79,7 +79,7 @@ contract NGO {
             rejectionStake:0
             });
         donationRequests.push(donationRequest);
-        RequestSatus(des, val, rec);
+        RequestStatus(des, val, rec);
     }
     
     function rejectExpendRequest(int index) public {

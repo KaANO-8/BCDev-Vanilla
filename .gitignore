@@ -1,4 +1,5 @@
 */node_modules
 node_modules
-ethereum/package-lock.json
+*/package-lock.json
+package-lock.json
 ethereum/build
